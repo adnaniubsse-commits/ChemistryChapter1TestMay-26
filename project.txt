@@ -1,0 +1,79 @@
+============================================================
+       TEACHERS ACADEMY BAHAWALPUR - MCQ PORTAL
+              PROJECT HISTORY & LOG
+============================================================
+
+PROJECT NAME: Chemistry Test May-2026
+DEVELOPER: Gemini CLI Assistant
+CLIENT: Teachers Academy Bahawalpur
+
+------------------------------------------------------------
+1. CORE REQUIREMENTS & FEATURES
+------------------------------------------------------------
+- Mobile-first, futuristic web application (Glassmorphism theme).
+- Offline-friendly (Works directly via index.html, no server needed).
+- Role-based access: Student and Teacher.
+- Teacher Password: 2247
+- Student Registration: Name, Father Name, Contact, City, School (Dropdown).
+- Registration Rule: Max 3 students per phone number.
+- Test Rule: 8 random questions per attempt (shuffled every time).
+- Scoring: 0.5 marks per correct answer (Total 4.0 marks).
+- Attempt Limit: Max 2 attempts per student; request re-attempt after that.
+- Results: Detailed breakdown, Review Answers feature, and PDF Export.
+
+------------------------------------------------------------
+2. PROJECT ARCHITECTURE (FILES)
+------------------------------------------------------------
+- index.html    : Main structure and UI sections.
+- style.css     : Futuristic styling, animations, and responsive layout.
+- app.js        : Application engine, state management, and test logic.
+* data.js       : MCQ Database (converted to JS to bypass CORS restrictions).
+- parse_mcqs.js : Node.js utility to convert .docx files to data.js.
+- logo.png.jpeg : Academy Logo asset.
+- README.md     : Documentation and Deployment guide.
+
+------------------------------------------------------------
+3. TECHNICAL LOG & UPDATES
+------------------------------------------------------------
+
+[PHASE 1: INITIAL SETUP]
+- Created the core SPA (Single Page Application) framework.
+- Implemented the futuristic "Glassmorphism" UI.
+- Setup localStorage persistence for students, attempts, and results.
+
+[PHASE 2: DATA INTEGRATION]
+- Built a custom parser for Word (.docx) files.
+- Detected bold text in Word as the correct answer.
+- Extracted 50 Chemistry MCQs.
+- PROBLEM: Local browsers block .json files (CORS).
+- SOLUTION: Converted data.json to data.js (MCQ_DATA variable) for 100% local compatibility.
+
+[PHASE 3: STUDENT SECTION PERSONALIZATION]
+- Added a professional dropdown for school selection (Primary: GHSS ABBASIA).
+- Implemented randomized question selection: The app picks 8 unique questions from the pool for every new test attempt.
+- Adjusted scoring to 0.5 marks per question.
+
+[PHASE 4: BRANDING UPDATE]
+- Renamed the test series to "Chemistry Test May-2026".
+- Updated all headings, page titles, and result card templates.
+
+------------------------------------------------------------
+4. HOW TO UPDATE QUESTIONS IN THE FUTURE
+------------------------------------------------------------
+1. Provide the new mcqs.docx file.
+2. Run: node parse_mcqs.js mcqs.docx
+3. The parser generates data.json.
+4. (Optional) Wrap the JSON content in `const MCQ_DATA = ...;` inside data.js for local file usage.
+
+------------------------------------------------------------
+5. TEACHER PANEL USAGE
+------------------------------------------------------------
+1. Go to "Teacher" role.
+2. Enter password: 2247
+3. View the table of all registered students.
+4. See their contact numbers, attempts, and latest marks.
+5. If a student reaches 2 attempts, their "Request Re-attempt" will appear here for approval.
+
+============================================================
+      END OF PROJECT LOG - MAY 2026
+============================================================
